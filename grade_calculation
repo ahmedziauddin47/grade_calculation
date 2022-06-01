@@ -1,0 +1,116 @@
+#include <iostream>
+
+using namespace std;
+
+//declare and initialize variables with array
+
+struct test
+{
+
+	int grade = 1;
+
+	int total = 0;
+
+	string letter = "grade";
+
+}test, entry;
+
+//function to determine letter grade
+
+void lettergrade()
+{
+
+	if (test.grade <= 100 && test.grade >= 90)
+	{
+		test.letter = "your grade is A";
+		cout << test.letter << endl;
+	}
+	else if (test.grade <= 89 && test.grade >= 80)
+	{
+		test.letter = "your grade is B";
+		cout << test.letter << endl;
+	}
+	else if (test.grade <= 79 && test.grade >= 70)
+	{
+		test.letter = "your grade is C";
+		cout << test.letter << endl;
+	}
+	else if (test.grade <= 69 && test.grade >= 60)
+	{
+		test.letter = "your grade is D";
+		cout << test.letter << endl;
+	}
+	else if (test.grade <= 59)
+	{
+		test.letter = "your grade is F";
+		cout << test.letter << endl;
+	}
+
+	entry.grade += 1;
+}
+
+//function to calculate average
+
+void calcaverage()
+{
+	test.total = test.total / 5;
+	cout << "your average is " << test.total << endl;
+	test.grade = test.total;
+	lettergrade();
+	cout << "overall" << endl;
+}
+
+//function for grade entry
+
+void determinegrade()
+{
+
+	while (entry.grade <= 5)
+	{
+		switch (entry.grade)
+		{
+		case 1:
+			cout << "enter test grade 1" << endl;
+			cin >> test.grade;
+			test.total = test.grade + test.total;
+			lettergrade();
+			break;
+		case 2:
+			cout << "enter test grade 2" << endl;
+			cin >> test.grade;
+			test.total = test.grade + test.total;
+			lettergrade();
+			break;
+		case 3:
+			cout << "enter test grade 3" << endl;
+			cin >> test.grade;
+			test.total = test.grade + test.total;
+			lettergrade();
+			break;
+		case 4:
+			cout << "enter test grade 4" << endl;
+			cin >> test.grade;
+			test.total = test.grade + test.total;
+			lettergrade();
+			break;
+		case 5:
+			cout << "enter test grade 5" << endl;
+			cin >> test.grade;
+			test.total = test.grade + test.total;
+			lettergrade();
+			break;
+		}
+	}
+	calcaverage();
+
+
+
+}
+
+
+
+int main()
+{
+	determinegrade();
+
+}
